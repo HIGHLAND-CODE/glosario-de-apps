@@ -64,5 +64,27 @@
     "sheets": "https://docs.google.com/spreadsheets/d/158R6_9uLfohMt1ZCO5boU1QrJSKBVb5ktezBjB_on58/edit?gid=1982435632#gid=1982435632",
     "tecnologias": ["Google Sites", "Cloud Tools"],
     "estado": "Producción"
+  },
+  {
+    "id": "611_control_liquidaciones",
+    "empresa": "611 Logística",
+    "nombre": "Control y Auditoría de Liquidaciones",
+    "descripcion": "Planilla de seguimiento para auditar qué liquidador procesó cada camión, registrando fechas de salida, fechas reales de liquidación y observaciones del proceso.",
+    "sheets": "https://docs.google.com/spreadsheets/d/1sUNOX3Y3ulk0a_DRDINNoQWLvGlWiUJwNctZQWcwZoQ/edit?pli=1&gid=0#gid=0",
+    "tecnologias": ["Google Sheets", "Cloud Tools"],
+    "estado": "Producción"
+  },
+  {
+    "id": "vsb_reuniones_semanales",
+    "empresa": "VSB",
+    "nombre": "Minutas y Planes de Acción Semanales",
+    "descripcion": "Hojas de seguimiento y control para las reuniones semanales de la empresa, donde se coordinan los planes de acción estratégicos para las áreas de despacho y depósito.",
+    "sheets": [
+      "https://docs.google.com/spreadsheets/d/1cgQe3WTzxrJwwHZNpo70lev2mb2KntSS/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true",
+      "https://docs.google.com/spreadsheets/d/1gA909klnUsZqYVGbc2JG377iNNk_RfE_/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true"
+    ],
+    "tecnologias": ["Google Sheets", "Cloud Tools"],
+    "estado": "Producción"
   }
+  
 ]
