@@ -128,5 +128,15 @@
     ],
     "tecnologias": ["Google Sheets", "Cloud Tools"],
     "estado": "Producción"
+  },
+  {
+    "id": "611_registro_supervisores",
+    "empresa": "611 Logística",
+    "nombre": "Registro de Supervisores (Control de Picking)",
+    "descripcion": "Aplicación web para auditorías y controles aleatorios de carga realizados por el supervisor de turno sobre lo armado por cada pickero, permitiendo registrar y reflejar diferencias de stock mediante tipos de ajuste.",
+    "link": "https://script.google.com/macros/s/AKfycby5ItZwI-NYpbIDoEJihoXno5h5bBafOWHSbjaW306EsJNKGx2mabjt2ayx58cehwyYOw/exec",
+    "sheets": "https://docs.google.com/spreadsheets/d/1KP1bsG1UJCu9To6y6B66AwD4ZKbuQdgwhTeePbYUYiE/edit?gid=59873161#gid=59873161",
+    "tecnologias": ["Google Apps Script", "JavaScript", "Web App", "Google Sheets"],
+    "estado": "Producción"
   }
 ]
