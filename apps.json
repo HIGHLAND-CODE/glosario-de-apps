@@ -46,7 +46,7 @@
     "estado": "Producción"
   },
   {
-    "id": "611_comprobantes",
+    "id": "611_comprobantes Vendedores",
     "empresa": "611 Logística",
     "nombre": "Envío de Comprobantes de Pago",
     "descripcion": "Herramienta automatizada para que el equipo de vendedores envíe y registre los comprobantes de pago de forma centralizada.",
@@ -56,7 +56,7 @@
     "estado": "Producción"
   },
   {
-    "id": "611_transferencias",
+    "id": "611_transferencias Reparto",
     "empresa": "611 Logística",
     "nombre": "Carga de Transferencias y Liquidaciones",
     "descripcion": "Plataforma destinada a la recepción de transferencias bancarias y gestión de planillas de liquidación correspondientes a los choferes.",
@@ -87,6 +87,42 @@
       {
         "nombre_b_sheet": "Reunión Semanal de Depósito 📊",
         "url": "https://docs.google.com/spreadsheets/d/1gA909klnUsZqYVGbc2JG377iNNk_RfE_/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true"
+      }
+    ],
+    "tecnologias": ["Google Sheets", "Cloud Tools"],
+    "estado": "Producción"
+  },
+  {
+    "id": "pyp_reuniones_semanales",
+    "empresa": "PYP",
+    "nombre": "Minutas y Planes de Acción Semanales",
+    "descripcion": "Hojas de seguimiento y control para las reuniones semanales de la empresa PYP, destinadas a coordinar y registrar los planes de acción para las áreas de despacho y depósito.",
+    "sheets": [
+      {
+        "nombre_b_sheet": "Reunión Semanal de Despacho PYP 📊",
+        "url": "https://docs.google.com/spreadsheets/d/1-8zup-YoT_G7K70ky1pNZBXOtpUX9KQF/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true"
+      },
+      {
+        "nombre_b_sheet": "Reunión Semanal de Depósito PYP 📊",
+        "url": "https://docs.google.com/spreadsheets/d/1r0IqNUeObHz-H3ksXyoTijAbVnlu8WpR/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true"
+      }
+    ],
+    "tecnologias": ["Google Sheets", "Cloud Tools"],
+    "estado": "Producción"
+  },
+  {
+    "id": "611_reuniones_semanales",
+    "empresa": "611 Logística",
+    "nombre": "Minutas y Planes de Acción Semanales",
+    "descripcion": "Hojas de seguimiento y control para las reuniones semanales de 611 Logística, orientadas a la coordinación estratégica y registro de planes de acción de despacho y depósito.",
+    "sheets": [
+      {
+        "nombre_b_sheet": "Reunión Semanal de Despacho 611 📊",
+        "url": "https://docs.google.com/spreadsheets/d/1_QIQeclng_1BxjPP7ouoRFp-P9rP6d9D/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true"
+      },
+      {
+        "nombre_b_sheet": "Reunión Semanal de Depósito 611 📊",
+        "url": "https://docs.google.com/spreadsheets/d/14tmEzChxCF7Rw_mBn0XjneuN3SSA71f0/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true"
       }
     ],
     "tecnologias": ["Google Sheets", "Cloud Tools"],
