@@ -31,7 +31,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="appsGrid">
-      </div>
+    </div>
     
     <div id="noResults" class="hidden text-center py-12 text-slate-500">
       No se encontraron aplicaciones que coincidan con los criterios de búsqueda.
@@ -42,14 +42,12 @@
     let appsData = [];
     let currentFilter = 'all';
 
-    // Colores para los badges de las empresas
     const badgeColors = {
       "611 Logística": "text-amber-700 bg-amber-50 border-amber-200",
       "VSB": "text-indigo-700 bg-indigo-50 border-indigo-200",
       "PYP": "text-emerald-700 bg-emerald-50 border-emerald-200"
     };
 
-    // Cargar datos desde el archivo JSON
     async function loadApps() {
       try {
         const response = await fetch('apps.json');
@@ -69,7 +67,6 @@
       }
     }
 
-    // Renderizar tarjetas en la grilla
     function renderApps() {
       const grid = document.getElementById('appsGrid');
       const searchInputValue = document.getElementById('globalSearch').value.toLowerCase();
@@ -98,14 +95,34 @@
           `<span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-600 rounded-sm font-mono border border-slate-200">${tech}</span>`
         ).join('');
 
-        // Generar el botón de Google Sheets de forma condicional
-        let sheetsButtonHtml = '';
-        if (app.sheets) {
-          sheetsButtonHtml = `
-            <a href="${app.sheets}" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium py-2 rounded-lg transition-colors cursor-pointer">
-              Ver Google Sheet 📊
+        // 1. Condicionar el botón de la Webapp para que solo aparezca si existe la propiedad 'link'
+        let webappButtonHtml = '';
+        if (app.link && app.link.trim() !== "") {
+          webappButtonHtml = `
+            <a href="${app.link}" target="_blank" class="block w-full text-center bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium py-2 rounded-lg transition-colors cursor-pointer">
+              Acceder a la Webapp ↗
             </a>
           `;
+        }
+
+        // 2. Renderizar condicional y dinámicamente los botones de Google Sheets
+        let sheetsButtonsHtml = '';
+        if (app.sheets) {
+          if (Array.isArray(app.sheets)) {
+            // Si es un arreglo (múltiples hojas con nombres personalizados)
+            sheetsButtonsHtml = app.sheets.map(sheet => `
+              <a href="${sheet.url}" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium py-2 rounded-lg transition-colors cursor-pointer">
+                ${sheet.nombre_b_sheet}
+              </a>
+            `).join('');
+          } else if (typeof app.sheets === 'string' && app.sheets.trim() !== "") {
+            // Si es un string único tradicional
+            sheetsButtonsHtml = `
+              <a href="${app.sheets}" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium py-2 rounded-lg transition-colors cursor-pointer">
+                Ver Google Sheet 📊
+              </a>
+            `;
+          }
         }
 
         const cardHtml = `
@@ -128,10 +145,8 @@
               </div>
             </div>
             <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
-              <a href="${app.link}" target="_blank" class="block w-full text-center bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium py-2 rounded-lg transition-colors cursor-pointer">
-                Acceder a la Webapp ↗
-              </a>
-              ${sheetsButtonHtml}
+              ${webappButtonHtml}
+              ${sheetsButtonsHtml}
             </div>
           </div>
         `;
@@ -139,7 +154,6 @@
       });
     }
 
-    // Manejo de eventos de las Pestañas (Tabs)
     document.getElementById('tabContainer').addEventListener('click', (e) => {
       if (e.target.classList.contains('tab-btn')) {
         document.querySelectorAll('.tab-btn').forEach(btn => {
