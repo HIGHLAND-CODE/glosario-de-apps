@@ -80,11 +80,16 @@
     "nombre": "Minutas y Planes de Acción Semanales",
     "descripcion": "Hojas de seguimiento y control para las reuniones semanales de la empresa, donde se coordinan los planes de acción estratégicos para las áreas de despacho y depósito.",
     "sheets": [
-      "https://docs.google.com/spreadsheets/d/1cgQe3WTzxrJwwHZNpo70lev2mb2KntSS/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true",
-      "https://docs.google.com/spreadsheets/d/1gA909klnUsZqYVGbc2JG377iNNk_RfE_/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true"
+      {
+        "nombre_b_sheet": "Reunión Semanal de Despacho 📊",
+        "url": "https://docs.google.com/spreadsheets/d/1cgQe3WTzxrJwwHZNpo70lev2mb2KntSS/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true"
+      },
+      {
+        "nombre_b_sheet": "Reunión Semanal de Depósito 📊",
+        "url": "https://docs.google.com/spreadsheets/d/1gA909klnUsZqYVGbc2JG377iNNk_RfE_/edit?usp=drive_link&ouid=112328489101325382447&rtpof=true&sd=true"
+      }
     ],
     "tecnologias": ["Google Sheets", "Cloud Tools"],
     "estado": "Producción"
   }
-  
 ]
