@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glosario de Aplicaciones Internas</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-50 font-sans min-h-screen text-slate-800">
+
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-8 shadow-xs">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <h1 class="text-2xl font-bold tracking-tight text-slate-900">Ecosistema de Aplicaciones Web</h1>
+        <p class="text-sm text-slate-500 mt-1">Glosario centralizado de desarrollos e iniciativas digitales del grupo empresarial.</p>
+      </div>
+      
+      <div class="relative w-full md:w-80">
+        <input type="text" id="globalSearch" placeholder="Buscar app o tecnología..." class="w-full bg-slate-100 border border-slate-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-500 focus:bg-white text-slate-900 transition-all">
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    
+    <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-4 mb-8" id="tabContainer">
+      <button data-filter="all" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 text-white shadow-xs cursor-pointer transition-all">Ver Todo</button>
+      <button data-filter="611 Logística" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 cursor-pointer transition-all">611 Logística</button>
+      <button data-filter="VSB" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 cursor-pointer transition-all">VSB</button>
+      <button data-filter="PYP" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 cursor-pointer transition-all">PYP</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="appsGrid">
+      </div>
+    
+    <div id="noResults" class="hidden text-center py-12 text-slate-500">
+      No se encontraron aplicaciones que coincidan con los criterios de búsqueda.
+    </div>
+  </main>
+
+  <script>
+    let appsData = [];
+    let currentFilter = 'all';
+
+    // Colores para los badges de las empresas
+    const badgeColors = {
+      "611 Logística": "text-amber-700 bg-amber-50 border-amber-200",
+      "VSB": "text-indigo-700 bg-indigo-50 border-indigo-200",
+      "PYP": "text-emerald-700 bg-emerald-50 border-emerald-200"
+    };
+
+    // Cargar datos desde el archivo JSON
+    async function loadApps() {
+      try {
+        const response = await fetch('apps.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        appsData = await response.json();
+        renderApps();
+      } catch (error) {
+        console.error('Error al cargar el glosario de aplicaciones:', error);
+        document.getElementById('appsGrid').innerHTML = `
+          <div class="text-red-500 col-span-full text-center bg-red-50 p-4 rounded-lg border border-red-200">
+            <p class="font-bold">Error al cargar el archivo apps.json</p>
+            <p class="text-xs mt-1">Asegúrate de estar usando "Go Live" en VS Code y que el archivo "apps.json" esté en la misma carpeta.</p>
+          </div>
+        `;
+      }
+    }
+
+    // Renderizar tarjetas en la grilla
+    function renderApps() {
+      const grid = document.getElementById('appsGrid');
+      const searchInputValue = document.getElementById('globalSearch').value.toLowerCase();
+      const noResultsMsg = document.getElementById('noResults');
+      
+      grid.innerHTML = '';
+
+      const filteredApps = appsData.filter(app => {
+        const matchesTab = currentFilter === 'all' || app.empresa === currentFilter;
+        const matchesSearch = app.nombre.toLowerCase().includes(searchInputValue) || 
+                              app.descripcion.toLowerCase().includes(searchInputValue) ||
+                              app.tecnologias.some(tech => tech.toLowerCase().includes(searchInputValue));
+        return matchesTab && matchesSearch;
+      });
+
+      if (filteredApps.length === 0) {
+        noResultsMsg.classList.remove('hidden');
+      } else {
+        noResultsMsg.classList.add('hidden');
+      }
+
+      filteredApps.forEach(app => {
+        const companyBadgeColor = badgeColors[app.empresa] || "text-slate-700 bg-slate-50 border-slate-200";
+        
+        const techBadges = app.tecnologias.map(tech => 
+          `<span class="px-2 py-0.5 text-xs bg-slate-100 text-slate-600 rounded-sm font-mono border border-slate-200">${tech}</span>`
+        ).join('');
+
+        // Generar el botón de Google Sheets de forma condicional
+        let sheetsButtonHtml = '';
+        if (app.sheets) {
+          sheetsButtonHtml = `
+            <a href="${app.sheets}" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium py-2 rounded-lg transition-colors cursor-pointer">
+              Ver Google Sheet 📊
+            </a>
+          `;
+        }
+
+        const cardHtml = `
+          <div class="bg-white rounded-xl border border-slate-200 shadow-xs p-5 flex flex-col justify-between hover:shadow-md hover:border-slate-300 transition-all duration-300">
+            <div>
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${companyBadgeColor}">
+                    ${app.empresa}
+                  </span>
+                  <h3 class="text-lg font-bold text-slate-900 mt-2">${app.nombre}</h3>
+                </div>
+                <span class="px-2 py-0.5 text-xs font-medium text-green-700 bg-green-50 border border-green-200 rounded-full">${app.estado}</span>
+              </div>
+              <p class="text-sm text-slate-600 mb-4 min-h-[60px]">
+                ${app.descripcion}
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                ${techBadges}
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+              <a href="${app.link}" target="_blank" class="block w-full text-center bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium py-2 rounded-lg transition-colors cursor-pointer">
+                Acceder a la Webapp ↗
+              </a>
+              ${sheetsButtonHtml}
+            </div>
+          </div>
+        `;
+        grid.insertAdjacentHTML('beforeend', cardHtml);
+      });
+    }
+
+    // Manejo de eventos de las Pestañas (Tabs)
+    document.getElementById('tabContainer').addEventListener('click', (e) => {
+      if (e.target.classList.contains('tab-btn')) {
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.classList.remove('bg-blue-600', 'text-white', 'shadow-xs');
+          btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+        });
+
+        e.target.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+        e.target.classList.add('bg-blue-600', 'text-white', 'shadow-xs');
+
+        currentFilter = e.target.getAttribute('data-filter');
+        renderApps();
+      }
+    });
+
+    document.getElementById('globalSearch').addEventListener('input', renderApps);
+    window.addEventListener('DOMContentLoaded', loadApps);
+  </script>
+</body>
+</html>

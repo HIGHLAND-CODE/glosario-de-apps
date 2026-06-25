@@ -1,0 +1,68 @@
+[
+  {
+    "id": "vsb_count",
+    "empresa": "VSB",
+    "nombre": "App de Conteo y Frescura",
+    "descripcion": "Aplicación web optimizada para el control de inventario físico, auditoría de stock y monitoreo de frescura en tiempo real.",
+    "link": "https://highland-code.github.io/COUNT/",
+    "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    "estado": "Producción"
+  },
+  {
+    "id": "611_dashboard",
+    "empresa": "611 Logística",
+    "nombre": "Dashboard Operativo",
+    "descripcion": "Panel de control centralizado para el monitoreo en tiempo real de métricas críticas y estado general de la operación logística.",
+    "link": "https://reclamos611.github.io/sistema-operativo-611/dashboard_operativo.html",
+    "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    "estado": "Producción"
+  },
+  {
+    "id": "611_rechazos",
+    "empresa": "611 Logística",
+    "nombre": "App de Rechazos",
+    "descripcion": "Herramienta ágil diseñada para registrar, categorizar y gestionar los rechazos de mercadería en los procesos de entrega.",
+    "link": "https://reclamos611.github.io/rechazos-app/",
+    "sheets": "https://docs.google.com/spreadsheets/d/11-EiWTUpa2pEM3goc8MOhUmmab5yLY0L7dC-h00g2Vo/edit?gid=164615255#gid=164615255",
+    "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    "estado": "Producción"
+  },
+  {
+    "id": "611_guia_vendedores",
+    "empresa": "611 Logística",
+    "nombre": "Guía de Visita Vendedores",
+    "descripcion": "Plataforma de asistencia digital para optimizar el ruteo, seguimiento y registro de las visitas comerciales en calle.",
+    "link": "https://reclamos611.github.io/guia-vendedores/guia_visita_611.html",
+    "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    "estado": "Producción"
+  },
+  {
+    "id": "611_mapas",
+    "empresa": "611 Logística",
+    "nombre": "Sistema de Mapas 611",
+    "descripcion": "Módulo de geolocalización y mapas integrados para la visualización espacial de rutas, clientes y puntos clave de la operación.",
+    "link": "https://reclamos611.github.io/Mapas-611/",
+    "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    "estado": "Producción"
+  },
+  {
+    "id": "611_comprobantes",
+    "empresa": "611 Logística",
+    "nombre": "Envío de Comprobantes de Pago",
+    "descripcion": "Herramienta automatizada para que el equipo de vendedores envíe y registre los comprobantes de pago de forma centralizada.",
+    "link": "https://script.google.com/macros/s/AKfycbxMe7oHUcIthwQTPzEXJchB6u6YXS7vtB6DFh0UyI-pQM28QEhwX-4l2pAJv821p4Qh/exec",
+    "sheets": "https://docs.google.com/spreadsheets/d/1rSTAHlxRXLSFOoiyXt0D5O6x3kBuhddAXA5Lm_dUIcc/edit?gid=151548346#gid=151548346",
+    "tecnologias": ["Google Apps Script", "JavaScript", "Web App"],
+    "estado": "Producción"
+  },
+  {
+    "id": "611_transferencias",
+    "empresa": "611 Logística",
+    "nombre": "Carga de Transferencias y Liquidaciones",
+    "descripcion": "Plataforma destinada a la recepción de transferencias bancarias y gestión de planillas de liquidación correspondientes a los choferes.",
+    "link": "https://sites.google.com/view/cargadetransferencias/p%C3%A1gina-principal",
+    "sheets": "https://docs.google.com/spreadsheets/d/158R6_9uLfohMt1ZCO5boU1QrJSKBVb5ktezBjB_on58/edit?gid=1982435632#gid=1982435632",
+    "tecnologias": ["Google Sites", "Cloud Tools"],
+    "estado": "Producción"
+  }
+]
