@@ -46,12 +46,12 @@
     "estado": "Producción"
   },
   {
-    "id": "611_comprobantes Vendedores",
+    "id": "611 cobranzas Vendedores",
     "empresa": "611 Logística",
-    "nombre": "Envío de Comprobantes de Pago",
+    "nombre": "Gestion de Cobranzas",
     "descripcion": "Herramienta automatizada para que el equipo de vendedores envíe y registre los comprobantes de pago de forma centralizada.",
-    "link": "https://script.google.com/macros/s/AKfycbxMe7oHUcIthwQTPzEXJchB6u6YXS7vtB6DFh0UyI-pQM28QEhwX-4l2pAJv821p4Qh/exec",
-    "sheets": "https://docs.google.com/spreadsheets/d/1rSTAHlxRXLSFOoiyXt0D5O6x3kBuhddAXA5Lm_dUIcc/edit?gid=151548346#gid=151548346",
+    "link": "https://highland-code.github.io/Gestion-cobranzas/",
+    "sheets": "https://docs.google.com/spreadsheets/d/1w-VUF3cy4NW-U2mNwnrZy6nXe_SHCaqyDzWmlHCBUkc/edit?gid=0#gid=0",
     "tecnologias": ["Google Apps Script", "JavaScript", "Web App"],
     "estado": "Producción"
   },
