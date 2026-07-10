@@ -13,7 +13,7 @@
     "empresa": "611 Logística",
     "nombre": "Dashboard Operativo",
     "descripcion": "Panel de control centralizado para el monitoreo en tiempo real de métricas críticas y estado general de la operación logística.",
-    "link": "https://reclamos611.github.io/sistema-operativo-611/dashboard_operativo.html",
+    "link": "https://nodus-app.github.io/sistema-operativo-nodus/",
     "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
     "estado": "Producción"
   },
@@ -22,7 +22,7 @@
     "empresa": "611 Logística",
     "nombre": "App de Rechazos",
     "descripcion": "Herramienta ágil diseñada para registrar, categorizar y gestionar los rechazos de mercadería en los procesos de entrega.",
-    "link": "https://reclamos611.github.io/rechazos-app/",
+    "link": "https://nodus-app.github.io/rechazos-app/",
     "sheets": "https://docs.google.com/spreadsheets/d/11-EiWTUpa2pEM3goc8MOhUmmab5yLY0L7dC-h00g2Vo/edit?gid=164615255#gid=164615255",
     "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
     "estado": "Producción"
@@ -32,7 +32,7 @@
     "empresa": "611 Logística",
     "nombre": "Guía de Visita Vendedores",
     "descripcion": "Plataforma de asistencia digital para optimizar el ruteo, seguimiento y registro de las visitas comerciales en calle.",
-    "link": "https://reclamos611.github.io/guia-vendedores/guia_visita_611.html",
+    "link": "https://nodus-app.github.io/guia-vendedores/",
     "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
     "estado": "Producción"
   },
@@ -41,7 +41,7 @@
     "empresa": "611 Logística",
     "nombre": "Sistema de Mapas 611",
     "descripcion": "Módulo de geolocalización y mapas integrados para la visualización espacial de rutas, clientes y puntos clave de la operación.",
-    "link": "https://reclamos611.github.io/Mapas-611/",
+    "link": "https://nodus-app.github.io/Rastrillaje-nodus/",
     "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
     "estado": "Producción"
   },
