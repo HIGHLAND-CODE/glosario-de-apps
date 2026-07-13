@@ -39,7 +39,7 @@
   {
     "id": "611_mapas",
     "empresa": "611 Logística",
-    "nombre": "Sistema de Mapas 611",
+    "nombre": "Sistema de Rastrillaje de zonas",
     "descripcion": "Módulo de geolocalización y mapas integrados para la visualización espacial de rutas, clientes y puntos clave de la operación.",
     "link": "https://nodus-app.github.io/Rastrillaje-nodus/",
     "tecnologias": ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
