@@ -75,6 +75,15 @@
     "estado": "Producción"
   },
   {
+    "id": "Análisis_Clientes_NO_COMPRADORES_PepsiCo",
+    "empresa": "611 Logística",
+    "nombre": "Análisis Clientes No compradores",
+    "descripcion": "Planilla de seguimiento para controlar clientes no compradores de Pepsico.",
+    "sheets": "https://script.google.com/macros/s/AKfycbznM0qIxYjcNOpHS0S6XR0K8gTQ73YJ4rxd8Pp03NkpZVrqxTNCAGXPOAf3nSkBMEaWNg/exec",
+    "tecnologias": ["Google Appscripts", "Cloud Tools"],
+    "estado": "Producción"
+  },
+  {
     "id": "vsb_reuniones_semanales",
     "empresa": "VSB",
     "nombre": "Minutas y Planes de Acción Semanales",
